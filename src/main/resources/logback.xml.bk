@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<configuration>
+
+
+
+	<appender name="splunkhttp"
+		class="com.splunk.logging.HttpEventCollectorLogbackAppender">
+		<url>http://localhost:8088</url>
+		<token>0c987d6a-a2b5-4d42-85aa-0645b2f03d59</token>
+		<source>Order_Notification_event_logs</source>
+		<index>order_notification_dev</index>
+		<disableCertificateValidation>true</disableCertificateValidation>
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<pattern>%msg</pattern>
+		</layout>
+	</appender>
+
+	<logger name="splunk.logger" additivity="false" level="INFO">
+		<appender-ref ref="splunkhttp" />
+	</logger>
+
+	<root level="INFO">
+		<appender-ref ref="splunkhttp" />
+	</root>
+</configuration>
