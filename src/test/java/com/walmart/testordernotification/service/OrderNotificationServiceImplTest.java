@@ -13,8 +13,9 @@ import com.walmart.ordernotification.exception.EmailNotSendException;
 import com.walmart.ordernotification.model.OrderNotificationResponse;
 import com.walmart.ordernotification.service.OrderNotificationServiceImpl;
 
-@SpringBootTest
+
 @ContextConfiguration(classes = OrdernotificationApplication.class)
+@SpringBootTest
 public class OrderNotificationServiceImplTest {
 
 	@Autowired
